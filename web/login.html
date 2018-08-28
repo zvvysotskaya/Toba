@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>TOBA Titan Online Banking Application</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/color.css" media="screen">
+    </head>
+    <body>        
+        <div id="wrapper">
+            <header>
+                <div id="logo"></div>
+                <div id="titleApp"><h1>Titan Online Banking Application</h1></div>    
+                  
+            </header>           
+                <nav>
+                    <ul>
+                    <li><a href="login.html">Login / Register </a></li>
+                    </ul>
+                </nav>   
+               <main> 
+                   <h2>Log In</h2>
+                  
+                       <form action="login" method="post" class="login1" >
+                             
+                       <input type="hidden" name="action" value="aaa">
+                       <label>Username:</label>
+                       <input type="text" name="userName" ><br>
+                       <label>Password:</label>
+                       <input type="password" name="password" ><br>
+                       
+                       <input type="submit" value="login">
+                       </form><br><br>
+                   
+                       <h2>Create an Account</h2>
+                       <div>
+                       <form action="register" method="post" class="account1">          
+                           <input type="hidden" name="action" value="bb">
+                           
+                           <input type="submit" value="Create Account">
+                     
+                       </form><br><br>
+                       </div>
+            </main>
+            <footer>
+                <div class="copy">
+copyright &copy; 2018 AAAA, Inc. All rights reserved.<br><br>
+<a href="mailto:contact@AAAA.com">contact@AAAA.com</a>
+</div>
+            </footer>    
+            
+        </div>
+    </body>
+</html>
+
