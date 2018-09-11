@@ -21,24 +21,27 @@
                <main> 
                    <h2>Log In</h2>
                   
-                       <form action="login" method="post" class="login1" >
-                             
+                       <form action="login" method="post" class="login1" >                             
                        <input type="hidden" name="action" value="aaa">
                        <label>Username:</label>
                        <input type="text" name="userName" ><br>
                        <label>Password:</label>
                        <input type="password" name="password" ><br>
                        
-                       <input type="submit" value="login">
+                       <input type="submit" value="Login">
                        </form><br><br>
-                   
+                       <h2>Reset Password</h2>
+                       <div>
+                       <form  action="login" method="post" class="account1">
+                           <input type="hidden" name="action" value="resetp">
+                           <input type="submit" value="Reset">
+                       </form><br><br>
+                       </div>
                        <h2>Create an Account</h2>
                        <div>
                        <form action="register" method="post" class="account1">          
-                           <input type="hidden" name="action" value="bb">
-                           
-                           <input type="submit" value="Create Account">
-                     
+                           <input type="hidden" name="action" value="bb">                           
+                           <input type="submit" value="Create Account">                     
                        </form><br><br>
                        </div>
             </main>

@@ -21,6 +21,14 @@
         <servlet-name>NewCustomerServlet</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <servlet-class>appResetPassword.ResetPasswordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetPasswordServlet</servlet-name>
+        <url-pattern>/reset</url-pattern>
+    </servlet-mapping>
     <error-page>
         <error-code>404</error-code>
         <location>/error404.jsp</location>
@@ -39,11 +47,7 @@
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>login.html</welcome-file>
-        <welcome-file>accountActivity.html</welcome-file>
-        <welcome-file>newCustomer.jsp</welcome-file>
-        <welcome-file>transaction.html</welcome-file>
-        <welcome-file>success.html</welcome-file>
-        <welcome-file>loginFailure.html</welcome-file>
+        
         
     </welcome-file-list>
     

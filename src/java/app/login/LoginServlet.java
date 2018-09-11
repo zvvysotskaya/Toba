@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import appBusiness.UserLogin;
+import appBusinessUser.User;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author zhann
@@ -34,23 +36,29 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
        String url = "";   
        String action = request.getParameter("action");
+       HttpSession session = request.getSession();
        if(action.equals("aaa")){
            String userName = request.getParameter("userName");
            String password = request.getParameter("password");
-           UserLogin user = new UserLogin(userName, password);
+           User user = new User(userName, password);
            request.setAttribute("user", user);
-           if(userName.equals("jsmith@toba.com") && password.equals("letmein"))
+           String newpassword = (String)session.getAttribute("password");
+           if(userName.equals("jsmith@toba.com") && password.equals("letmein")){
             url = "/transaction.html"; 
-           
+           }
+           else if(password.equals(newpassword)){               
+               url = "/accountActivity.jsp";
+           }
            else
-               url = "/loginFailure.html";
-           
+               url = "/loginFailure.html";           
+       }   
+       else if(action.equals("resetp")){
+        url = "/passwordReset.jsp";   
        }
-            
-          getServletContext().getRequestDispatcher(url)
+       else if(action.equals("resetpassword")){
+           url = "/login.html";
+       }       
+        getServletContext().getRequestDispatcher(url)
         .forward(request, response); 
     }
-
-       
-
 }

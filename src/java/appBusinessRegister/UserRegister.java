@@ -49,7 +49,7 @@ public class UserRegister implements Serializable{
     public String getLastName(){
         return lastName;
     }
-    public void setUserName(){
+    public void setLastName(){
       this.lastName = lastName;
     }
     public String getPhone(){

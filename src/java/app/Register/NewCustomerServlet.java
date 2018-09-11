@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import appBusinessRegister.UserRegister;
+import appBusinessUser.User;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author zhann
@@ -45,20 +47,36 @@ public class NewCustomerServlet extends HttpServlet {
            String state = request.getParameter("state");
            String zipcode = request.getParameter("zipcode");
            String email = request.getParameter("email");
+           String ln = lastName;
+           String z = zipcode;
+           String lastNzipC = ln + z;
            
+           
+           String userName = lastNzipC;
+           String password = "welcome1";
+           HttpSession session = request.getSession();
+           User user3 = new User(userName, password);
+           user3.getUserName();
+         
+           User user = (User) session.getAttribute("user");
+          
            UserRegister user2 = new UserRegister(firstName, lastName, phone, address, city, state, zipcode, email);
+           
            //validate the parameters
            String message;
            if(firstName==null ||lastName == null ||phone==null || address==null || city==null || state==null || zipcode==null || email==null ||
               firstName.isEmpty() ||lastName.isEmpty() || phone.isEmpty() || address.isEmpty() || city.isEmpty() || state.isEmpty() || zipcode.isEmpty() || email.isEmpty()){
                message = "Please fill out all the form fields!!!";
+               
                url = "/newCustomer.jsp";
            }
            else{
+               session.setAttribute("user", user);
                message = "";
-               url = "/success.html";
+               url = "/success2.jsp";
            }
-           
+          
+           request.setAttribute("user3", user3);
            request.setAttribute("user2", user2);         
           request.setAttribute("message", message); 
            
