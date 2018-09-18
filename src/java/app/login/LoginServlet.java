@@ -12,10 +12,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import appBusiness.UserLogin;
 import appBusinessUser.User;
 import javax.servlet.http.HttpSession;
+
 /**
  *
  * @author zhann
@@ -23,42 +23,40 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 
-   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doPost(request, response);
     }
 
-   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String url = "";   
-       String action = request.getParameter("action");
-       HttpSession session = request.getSession();
-       if(action.equals("aaa")){
-           String userName = request.getParameter("userName");
-           String password = request.getParameter("password");
-           User user = new User(userName, password);
-           request.setAttribute("user", user);
-           String newpassword = (String)session.getAttribute("password");
-           if(userName.equals("jsmith@toba.com") && password.equals("letmein")){
-            url = "/transaction.html"; 
-           }
-           else if(password.equals(newpassword)){               
-               url = "/accountActivity.jsp";
-           }
-           else
-               url = "/loginFailure.html";           
-       }   
-       else if(action.equals("resetp")){
-        url = "/passwordReset.jsp";   
-       }
-       else if(action.equals("resetpassword")){
-           url = "/login.html";
-       }       
+        String url = "";
+        String action = request.getParameter("action");
+        HttpSession session = request.getSession();
+        if (action.equals("aaa")) {
+
+            String userName = request.getParameter("userName");
+            String password = request.getParameter("password");
+
+            User user = (User) session.getAttribute("user");
+
+            String newpassword = (String) session.getAttribute("password");
+            if (userName.equals("jsmith@toba.com") && password.equals("letmein")) {
+                url = "/transaction.html";
+            } else if (password.equals(newpassword)) {
+
+                url = "/accountActivity.jsp";
+            } else {
+                url = "/loginFailure.html";
+            }
+        } else if (action.equals("resetp")) {
+            url = "/passwordReset.jsp";
+        } else if (action.equals("resetpassword")) {
+            url = "/login.html";
+        }
         getServletContext().getRequestDispatcher(url)
-        .forward(request, response); 
+                .forward(request, response);
     }
 }

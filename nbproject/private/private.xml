@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/accountActivity.jsp</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/src/java/app/Register/NewCustomerServlet.java</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/src/java/appBusinessRegister/UserRegister.java</file>
-            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/style/color.css</file>
+            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/src/java/appResetPassword/ResetPasswordServlet.java</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/success2.jsp</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/src/java/appBusinessUser/User.java</file>
-            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/login.html</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/passwordReset.jsp</file>
+            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/login.html</file>
+            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/transaction.html</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/src/java/app/login/LoginServlet.java</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/newCustomer.jsp</file>
         </group>

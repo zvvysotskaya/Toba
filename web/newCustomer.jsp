@@ -9,23 +9,23 @@
                    <form action="register" method="post" class="customer">
                        <input type="hidden" name="action" value="bb">
                            <label>First Name:</label>
-                           <input type="text" name="firstName" value="${user2.firstName}"><br>
+                           <input type="text" name="firstName" value="${user.firstName}"><br>
                            
                            <label>Last Name:</label>
-                           <input type="text" name="lastName" value="${user2.lastName}"><br>
+                           <input type="text" name="lastName" value="${user.lastName}"><br>
                            
                            <label>Phone:</label>
-                           <input type="tel" name="phone" value=" ${user2.phone}"><br>
+                           <input type="tel" name="phone" value=" ${user.phone}"><br>
                            <label>Address:</label>
-                           <input type="text" name="address" value=" ${user2.address}"><br>
+                           <input type="text" name="address" value=" ${user.address}"><br>
                            <label>City:</label>
-                           <input type="text" name="city" value="${user2.city}"><br>
+                           <input type="text" name="city" value="${user.city}"><br>
                            <label>State:</label>
-                           <input type="text" name="state" value="${user2.state}"><br>
+                           <input type="text" name="state" value="${user.state}"><br>
                            <label>Zipcode:</label>
-                           <input type="text" name="zipcode" value="${user2.zipcode}"><br>
+                           <input type="text" name="zipcode" value="${user.zipcode}"><br>
                            <label>Email:</label>
-                           <input type="text" name="email" value="${user2.email}"><br><br>
+                           <input type="text" name="email" value="${user.email}"><br><br>
                            <input type="submit" value="Submit"><br>
                            
                    </form>

@@ -22,8 +22,6 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "ResetPasswordServlet", urlPatterns = {"/ResetPasswordServlet"})
 public class ResetPasswordServlet extends HttpServlet {
 
-    
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -39,31 +37,33 @@ public class ResetPasswordServlet extends HttpServlet {
         doPost(request, response);
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "";
         String action = request.getParameter("action");
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        String city = request.getParameter("city");
+        String state = request.getParameter("state");
+        String zipcode = request.getParameter("zipcode");
+        String email = request.getParameter("email");
         String password = request.getParameter("password");
         String userName = request.getParameter("userName");
-       HttpSession session = request.getSession();
-       session.setAttribute("password", password);
-       
-       //Store user data in a user object
-       User user4 = new User(userName, password);
-       user4.setPassword(password);
-       //Store a user object as a session attribute
-       
-       session.setAttribute("user4", user4);
-       
-       if(action.equals("resetpassword")){
-       session.setAttribute("user4", user4);
-       url = "/login.html";
-       }
+        HttpSession session = request.getSession();
+
+        //Store user data in a user object
+        User user = new User(firstName, lastName, phone, address, city, state, zipcode, email, userName, password);
+        user.setPassword(password);
+
+        if (action.equals("resetpassword")) {
+            session.setAttribute("password", password);
+            url = "/login.html";
+        }
         getServletContext().getRequestDispatcher(url)
-        .forward(request, response); 
+                .forward(request, response);
     }
 
-    
 }
