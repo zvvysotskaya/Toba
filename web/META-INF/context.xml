@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/Toba"/>
+<Context path="/TobaPU">
+    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="10000" 
+              name="jdbc/fortoba" password="sesame" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/fortoba" username="root"/>
+</Context>
+ 
+

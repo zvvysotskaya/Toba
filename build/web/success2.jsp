@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/includes/header.html"/>
 <main> 
-    <h2>This is your account information:</h2>
+    <h3>Account information:</h3>
 
     <p>First Name: <c:out value="${user.firstName}"/></p>
     <p>Last Name: <c:out value="${user.lastName}"/></p>

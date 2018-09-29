@@ -6,13 +6,20 @@
 package appBusinessUser;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
+@Entity
 /**
  *
  * @author zhann
  */
 public class User implements Serializable {
-
+   
+private Long userId;
     private String firstName;
     private String lastName;
     private String phone;
@@ -24,32 +31,17 @@ public class User implements Serializable {
     private String userName;
     private String password;
 
-    public User() {
-        firstName = "";
-        lastName = "";
-        phone = "";
-        address = "";
-        city = "";
-        state = "";
-        zipcode = "";
-        email = "";
-        userName = "";
-        password = "";
+     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+    public Long getUserId() {
+        return userId;
     }
 
-    public User(String firstName, String lastName, String phone, String address, String city, String state, String zipcode, String email, String userName, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phone = phone;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zipcode = zipcode;
-        this.email = email;
-        this.userName = userName;
-        this.password = password;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
-
+   
     public String getFirstName() {
         return firstName;
     }
@@ -81,7 +73,7 @@ public class User implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
-
+  
     public String getCity() {
         return city;
     }
@@ -89,7 +81,7 @@ public class User implements Serializable {
     public void setCity(String city) {
         this.city = city;
     }
-
+   
     public String getState() {
         return state;
     }
@@ -97,7 +89,7 @@ public class User implements Serializable {
     public void setState(String state) {
         this.state = state;
     }
-
+ 
     public String getZipcode() {
         return zipcode;
     }

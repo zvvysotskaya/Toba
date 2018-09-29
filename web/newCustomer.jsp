@@ -4,7 +4,7 @@
                <main> 
                    <h2>Create an Account</h2>
                    <p id="center">To create an account, please fill out the form.</p>
-                   <h2> <i>${message}</i></h2>
+                   <h4> <i>${message}</i></h4>
                    
                    <form action="register" method="post" class="customer">
                        <input type="hidden" name="action" value="bb">

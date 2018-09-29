@@ -54,28 +54,85 @@ public final class accountActivity_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       if (_jspx_meth_c_import_0(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("               <main> \n");
-      out.write("                   <h1>Account Activity</h1>\n");
-      out.write("                   ");
+      out.write("\r\n");
+      out.write("<main> \r\n");
+      out.write("    <p class=\"aa\">Account Activity</p>\r\n");
+      out.write("    ");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("                       ");
+      out.write("\r\n");
+      out.write("    ");
       if (_jspx_meth_c_if_1(_jspx_page_context))
         return;
-      out.write("\n");
-      out.write("                   \n");
-      out.write("               </main>\n");
-      out.write("               ");
+      out.write("\r\n");
+      out.write("        <h3>Account information</h3>\r\n");
+      out.write("        <table>\r\n");
+      out.write("            <tr>\r\n");
+      out.write("               \r\n");
+      out.write("                <th>First Name</th>\r\n");
+      out.write("                <th>Last Name</th>\r\n");
+      out.write("                <th>Phone</th>\r\n");
+      out.write("                <th>Address</th>\r\n");
+      out.write("                <th>City</th>\r\n");
+      out.write("                <th>State</th>\r\n");
+      out.write("                <th>Zip Code</th>\r\n");
+      out.write("                <th>Email Address</th>\r\n");
+      out.write("                <th>User Name</th>\r\n");
+      out.write("                <th>Password</th>  \r\n");
+      out.write("            </tr>\r\n");
+      out.write("            <tr>\r\n");
+      out.write("                \r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.lastName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.phone}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.address}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.city}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.state}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.zipcode}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.email}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.userName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("                <th>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.password}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("</th>\r\n");
+      out.write("            </tr>\r\n");
+      out.write("            \r\n");
+      out.write("        </table>\r\n");
+      out.write("            <p class=\"aa\">Transactions</p>\r\n");
+      out.write("            <table>\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <th>Amount</th>\r\n");
+      out.write("                    <th>Available Balance</th>\r\n");
+      out.write("                    <th>Invoice Date</th>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("            </table>\r\n");
+      out.write("    <h3><a href=\"login.html\">Login / Register</a></h3>\r\n");
+      out.write("</main>\r\n");
       if (_jspx_meth_c_import_1(_jspx_page_context))
         return;
-      out.write("  \n");
+      out.write("  \r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -123,16 +180,18 @@ public final class accountActivity_jsp extends org.apache.jasper.runtime.HttpJsp
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_0.setPageContext(_jspx_page_context);
     _jspx_th_c_if_0.setParent(null);
-    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user!=null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1!=null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                       <h2>Welcome ");
-        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-        out.write("!</h2> \n");
-        out.write("                       \n");
-        out.write("                   ");
+        out.write("\r\n");
+        out.write("        <h4><i>Welcome ");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.firstName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write(' ');
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1.lastName}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("!</i></h4> \r\n");
+        out.write("\r\n");
+        out.write("    ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -154,13 +213,13 @@ public final class accountActivity_jsp extends org.apache.jasper.runtime.HttpJsp
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_1.setPageContext(_jspx_page_context);
     _jspx_th_c_if_1.setParent(null);
-    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user==null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${user1==null}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
-        out.write("                           <h2>Not logged in!</h2>\n");
-        out.write("                       ");
+        out.write("\r\n");
+        out.write("        <h2><i>Not logged in!</i></h2>\r\n");
+        out.write("    ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
