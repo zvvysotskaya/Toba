@@ -56,21 +56,21 @@ public class AccountDB {
             em.close();
         }
     }
-    public static List<Account> selectAccounts() {
+    public static List<Account> selectByAccountUserID(String accountUserID) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
-        String qString = "SELECT a from Account a " +
-                "WHERE i.accountID = :accountID";
-        TypedQuery<Account> q = em.createQuery(qString, Account.class);
-        List<Account> results = null;
+
+        TypedQuery<Account> q = em.createQuery("SELECT p FROM Account p WHERE p.accountUserID=:accountUserID", Account.class);
+        q.setParameter("accountUserID", accountUserID);
+        List<Account> accounts;
         try {
-            results = q.getResultList();
-        } catch (NoResultException ex) {
-            return null;
+            accounts = q.getResultList();
+            if (accounts == null || accounts.isEmpty()) {
+                accounts = null;
+            }
         } finally {
             em.close();
         }
-        
-        return results;
-    } 
+        return accounts;
+    }
     
 }

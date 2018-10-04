@@ -116,10 +116,10 @@ public static boolean passwordExists(String password) {
         return users;
     
     }
-    public static User getUserById(long userID){
+    public static User getUserById(long userId){
          EntityManager em = DBUtil.getEmFactory().createEntityManager();
         try{
-            User user = em.find(User.class, userID);
+            User user = em.find(User.class, userId);
             return user;
         }finally{
             em.close();

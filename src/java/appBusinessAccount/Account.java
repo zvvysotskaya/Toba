@@ -95,7 +95,14 @@ public String getTransactionDateDefaultFormat() {
         String transactionDateFormatted = dateFormat.format(transactionDate);
         return transactionDateFormatted;
     }
-        
+      public  String setAccountUserAmountString(){
+        String amountString = String.valueOf(amount);
+        return amountString;
+    }  
+      public  String setAccountUserIdString(){
+        String accountUserIDS = String.valueOf(accountUserID);
+        return accountUserIDS;
+    }  
 }
 
 

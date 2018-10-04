@@ -17,6 +17,7 @@ import appBusinessAccount.Account;
 import appBusinessUser.User;
 import data.AccountDB;
 import data.UserDB;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 
@@ -44,9 +45,10 @@ public class LoginServlet extends HttpServlet {
 
             String userName = request.getParameter("userName");
             String password = request.getParameter("password");
+          
+         
+           User user1 = UserDB.selectUserN(userName);
            
-            
-            User user1 = UserDB.selectUserN(userName);
             session.setAttribute("user1", user1);
                        
             if (userName.equals("jsmith@toba.com") && password.equals("letmein")) {

@@ -122,5 +122,8 @@ private Long userId;
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+public  String setUserIdString(){
+        String userIDS = String.valueOf(userId);
+        return userIDS;
+    }  
 }

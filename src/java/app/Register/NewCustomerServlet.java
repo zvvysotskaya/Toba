@@ -16,6 +16,7 @@ import appBusinessUser.User;
 import data.AccountDB;
 import data.DBUtil;
 import data.UserDB;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -35,7 +36,7 @@ public class NewCustomerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
         String url = "/index.html";
         // get current action
         String action = request.getParameter("action");
@@ -92,65 +93,74 @@ public class NewCustomerServlet extends HttpServlet {
             request.setAttribute("message", message);
 
         } else if (action.equals("addMoney")) {
-             try{
-            HttpSession session = request.getSession();
-           
-            session.getAttribute("user1");
-            User user = (User)session.getAttribute("user1");
-          
-            String amount = request.getParameter("amount");
-                  
+            try {                
+                User user = (User) session.getAttribute("user1");
+                String amount = request.getParameter("amount");
+
+                double amount2 = Double.parseDouble(amount);
+                Account account1 = new Account();
+
+                double amount3 = account1.credit(amount2, 25.00);
+                account1.setAmount(amount3);
+                java.util.Date today = new java.util.Date();
+                account1.setTransactionDate(today);
+                account1.setAccountUserID(user.getUserId());
+                message = "Your transaction was seccessfuly created!";
+                AccountDB.insert(account1);
+                request.setAttribute("message", message);
+                url = "/successAccount.jsp";
+            } catch (Exception ex) {
+                System.out.println(ex);
+                message = "Please enter an amount of money you would like to put in your account.";
+                request.setAttribute("message", message);
+                url = "/successAccount.jsp";
+            }
+        } else if (action.equals("removeMoney")) {
+            try {
                
-            double amount2 = Double.parseDouble(amount);
-            Account account1 = new Account();
-            
-            double amount3 = account1.credit(amount2, 25.00);
-            account1.setAmount(amount3);
-             java.util.Date today = new java.util.Date();
-            account1.setTransactionDate(today);
-            account1.setAccountUserID(user.getUserId());
-            message = "Your transaction was seccessfuly created!";
-            AccountDB.insert(account1);
-            request.setAttribute("message", message);
-            url = "/successAccount.jsp";
-            }catch(Exception ex){
+                User user = (User) session.getAttribute("user1");
+                String amount = request.getParameter("amount");
+                double amount2 = Double.parseDouble(amount);
+                java.util.Date today = new java.util.Date();
+                Account account1 = new Account();
+                double amount3 = account1.debit(amount2, 25.00);
+                account1.setAmount(amount3);
+                account1.setTransactionDate(today);
+                account1.setAccountUserID(user.getUserId());
+                message = "Your transaction was seccessfuly created!";
+                AccountDB.insert(account1);
+                request.setAttribute("message", message);
+                url = "/successAccount.jsp";
+            } catch (Exception ex) {
                 System.out.println(ex);
-               message = "Please enter an amount of money you would like to put in your account.";
-               request.setAttribute("message", message);
-               url = "/successAccount.jsp"; 
+                message = "Please enter an amount of money you would like to withdraw from your account.";
+                request.setAttribute("message", message);
+                url = "/successAccount.jsp";
             }
-        }
-         else if (action.equals("removeMoney")) {
-             try{
-             HttpSession session = request.getSession();
-            session.getAttribute("user1");
-            User user = (User)session.getAttribute("user1");
-            String amount = request.getParameter("amount");
-            double amount2 = Double.parseDouble(amount);
-            java.util.Date today = new java.util.Date();
-            Account account1 = new Account();
-            double amount3 = account1.debit(amount2, 25.00);
-            account1.setAmount(amount3);
-            account1.setTransactionDate(today);
-            account1.setAccountUserID(user.getUserId());
-            message = "Your transaction was seccessfuly created!";
-            AccountDB.insert(account1);
-            request.setAttribute("message", message);
-            url = "/successAccount.jsp";
-            }catch(Exception ex){
+        } else if (action.equals("transactions")) {
+            try {                 
+                User user = (User) session.getAttribute("user1");
+                List<Account> account7 = AccountDB.selectByAccountUserID(user.setUserIdString());
+                for (int i = 0; i < account7.size(); i++) {
+                    Account account = account7.get(i);
+                    account.setAccountUserIdString();
+                    account.setAccountUserAmountString();
+                    account.getTransactionDateDefaultFormat();
+                 
+                }
+                session.setAttribute("account7", account7);
+                url = "/accountActivity2.jsp";
+            } catch (Exception ex) {
                 System.out.println(ex);
-               message = "Please enter an amount of money you would like to withdraw from your account.";
-               request.setAttribute("message", message);
-               url = "/successAccount.jsp"; 
+                message = "Something is wrong!!!.";
+                request.setAttribute("message", message);
+                url = "/accountActivity2.jsp";
             }
+
         }
 
         getServletContext().getRequestDispatcher(url)
                 .forward(request, response);
-    }
-
-    private boolean isDigit(String amount) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
