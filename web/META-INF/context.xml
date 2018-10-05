@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/TobaPU">
-    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="10000" 
+    <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="100" maxIdle="30" maxWait="10000" 
               name="jdbc/fortoba" password="sesame" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/fortoba" username="root"/>
+    <Resource name="jdbc/fortoba" auth="Container"
+      maxActive="100" maxIdle="30" maxWaite="10000"
+      username="root" password="sesame"
+      driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://localhost:3306/fortoba?autoReconnect=true" 
+       logAbandonedTimeout="true" removeAbandoned="true"
+       removeAbandonedTimeout="60" type="javax.sql.DataSource"       
+        />
+    
+    
     <Realm className="org.apache.catalina.realm.JDBCRealm" 
          connectionName="root" connectionPassword="sesame" 
          connectionURL="jdbc:mysql://localhost:3306/fortoba" 

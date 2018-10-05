@@ -3,8 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/src/java/appAdminControler/AdminControlerServlet.java</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/admin/index.jsp</file>
+            <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/admin/login.html</file>
             <file>file:/C:/Users/zhann/Documents/SPC_Web/javaWeb/Toba/web/admin/reports.jsp</file>
         </group>
     </open-files>

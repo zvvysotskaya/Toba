@@ -61,29 +61,19 @@
         <role-name>programmer</role-name>
     </security-role>
     <!-- Restrict access to all files in the /admin folder -->
+        
+
     <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Protected Area</web-resource-name>
-            <url-pattern>/admin/*</url-pattern>
-        </web-resource-collection>
-        <!-- Authorize the programmer and service roles -->
-        <auth-constraint>
-            <role-name>programmer</role-name>
-            <role-name>service</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <!-- Use form-based authentication -->
-    <security-constraint>
-        <display-name>Constraint1</display-name>
+        <!-- Restrict access to the URLs in the admin directory -->
         <web-resource-collection>
             <web-resource-name>Admin</web-resource-name>
-            <description/>
             <url-pattern>/admin/*</url-pattern>
         </web-resource-collection>
+
+        <!-- Authorize the service and programmer roles -->
         <auth-constraint>
-            <description/>
-            <role-name>programmer</role-name>
             <role-name>service</role-name>
+            <role-name>programmer</role-name>
         </auth-constraint>
     </security-constraint>
     <login-config>
@@ -99,6 +89,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
         <welcome-file>login.html</welcome-file>
     </welcome-file-list>
