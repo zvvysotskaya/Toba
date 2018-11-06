@@ -4,7 +4,7 @@
 <main> 
     <h2>Transactions</h2>
 
-    <p>Your Balance: <c:out value="${account1.balance}"/></p>
+
     <Form action="register" method="post" class="addMoney">
         <input type="hidden" name ="action" value="addMoney">
         <label>Add money:</label>

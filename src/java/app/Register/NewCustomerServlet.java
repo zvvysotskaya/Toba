@@ -93,7 +93,7 @@ public class NewCustomerServlet extends HttpServlet {
             request.setAttribute("message", message);
 
         } else if (action.equals("addMoney")) {
-            try {                
+            try {
                 User user = (User) session.getAttribute("user1");
                 String amount = request.getParameter("amount");
 
@@ -117,7 +117,7 @@ public class NewCustomerServlet extends HttpServlet {
             }
         } else if (action.equals("removeMoney")) {
             try {
-               
+
                 User user = (User) session.getAttribute("user1");
                 String amount = request.getParameter("amount");
                 double amount2 = Double.parseDouble(amount);
@@ -138,15 +138,16 @@ public class NewCustomerServlet extends HttpServlet {
                 url = "/successAccount.jsp";
             }
         } else if (action.equals("transactions")) {
-            try {                 
+            try {
                 User user = (User) session.getAttribute("user1");
+                user.setUserIdString();
                 List<Account> account7 = AccountDB.selectByAccountUserID(user.setUserIdString());
                 for (int i = 0; i < account7.size(); i++) {
                     Account account = account7.get(i);
                     account.setAccountUserIdString();
                     account.setAccountUserAmountString();
                     account.getTransactionDateDefaultFormat();
-                 
+
                 }
                 session.setAttribute("account7", account7);
                 url = "/accountActivity2.jsp";

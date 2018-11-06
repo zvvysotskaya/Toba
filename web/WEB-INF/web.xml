@@ -33,12 +33,12 @@
         <url-pattern>/trans</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>AdminControlerServlet</servlet-name>
-        <servlet-class>appAdminControler.AdminControlerServlet</servlet-class>
+        <servlet-name>AdminControllerServlet</servlet-name>
+        <servlet-class>appAdminController.AdminControllerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AdminControlerServlet</servlet-name>
-        <url-pattern>/adminControler/*</url-pattern>
+        <servlet-name>AdminControllerServlet</servlet-name>
+        <url-pattern>/adminc</url-pattern>
     </servlet-mapping>
     <error-page>
         <error-code>404</error-code>
@@ -80,7 +80,7 @@
         <auth-method>FORM</auth-method>
         <form-login-config>
             <form-login-page>/admin/login.html</form-login-page>
-            <form-error-page>/admin/login_error.html</form-error-page>
+            <form-error-page>/admin/login_error.jsp</form-error-page>
         </form-login-config>
     </login-config>
     <session-config>

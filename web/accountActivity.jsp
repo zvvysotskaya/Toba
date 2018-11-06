@@ -41,30 +41,7 @@
             </tr>
             
         </table>
-            <h2>Transactions</h2>
-            <h4>To see transactions, please click the button</h4>
-            <form action="register" method="post">
-            <input type="hidden" name="action" value="transactions">
             
-            
-            <input type="submit" value="Transactions">
-           
-           </form> <br> 
-            <table>
-                <tr>
-                    <th>Amount</th>
-                    <th>Available Balance</th>
-                    <th>Invoice Date</th>
-                </tr>
-                <c:forEach var="account7" items="${account7}">
-                <tr>
-                    <th><c:out value="${account7.amount}"/></th>
-                    <th><c:out value="${account7.accountUserID}"/></th>
-                    <th><c:out value="${account7.transactionDate}"/></th>
-                    
-                    </c:forEach>
-                </tr>
-            </table>
     <h3><a href="login.html">Login / Register</a></h3>
 </main>
 <c:import url="/includes/footer.jsp"/>  

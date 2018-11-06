@@ -41,23 +41,7 @@
             </tr>
             
         </table>
-            <h2>Transactions</h2>
-            <h2>${message}</h2>
-            <table>
-                <tr>
-                    <th>User ID</th>
-                    <th>Amount</th>
-                    <th>Invoice Date</th>
-                </tr>
-                <c:forEach var="account7" items="${account7}">
-                <tr>
-                    <td><c:out value="${account7.accountUserID}"/></td>
-                    <td><c:out value="${account7.amount}"/></td>
-                    <td><c:out value="${account7.transactionDate}"/></td>
-                    
-                    </c:forEach>
-                </tr>
-            </table>
+           
     <h3><a href="login.html">Login / Register</a></h3>
 </main>
 <c:import url="/includes/footer.jsp"/>  

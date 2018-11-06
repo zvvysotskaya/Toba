@@ -48,6 +48,7 @@ public class LoginServlet extends HttpServlet {
           
          
            User user1 = UserDB.selectUserN(userName);
+            
            
             session.setAttribute("user1", user1);
                        
@@ -56,7 +57,7 @@ public class LoginServlet extends HttpServlet {
                 
             } else if (UserDB.passwordExists(password) && UserDB.userNameExists(userName)) {
                 
-                
+               
                 
                 
                 

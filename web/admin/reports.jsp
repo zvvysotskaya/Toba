@@ -1,16 +1,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="/includes/header2.html"/>
+<c:import url="header2_admin.html"/>
 <main> 
     <h2>Report</h2>
    
         <h3>Report information</h3>
-        <form action="<c:url value='/adminController/displayReport'/>" method="post">
-    <input type="hidden" name="reportName" value="userEmail">
-    <input type="hidden" name="reportTitle" value="The User Email report">
+        <form action="reports.jsp" method="post">
+    <input type="hidden" name="action" value="reports">
+    
     <input type="submit" value="User Register Report" class="left_margin">
 </form>
-        
+        ${message}
         
         <table>
             <tr>
@@ -28,16 +28,16 @@
             </tr>
             <tr>
                 
-                <th>${user1.firstName}</th>
-                <th>${user1.lastName}</th>
-                <th>${user1.phone}</th>
-                <th>${user1.address}</th>
-                <th>${user1.city}</th>
-                <th>${user1.state}</th>
-                <th>${user1.zipcode}</th>
-                <th>${user1.email}</th>
-                <th>${user1.userName}</th>
-                <th>${user1.password}</th>
+                <th>${user11.firstName}</th>
+                <th>${user11.lastName}</th>
+                <th>${user11.phone}</th>
+                <th>${user11.address}</th>
+                <th>${user11.city}</th>
+                <th>${user11.state}</th>
+                <th>${user11.zipcode}</th>
+                <th>${user11.email}</th>
+                <th>${user11.userName}</th>
+                <th>${user11.password}</th>
             </tr>
             
         </table>
@@ -49,15 +49,15 @@
                     <th>Amount</th>
                     <th>Invoice Date</th>
                 </tr>
-                <c:forEach var="account7" items="${account7}">
+                <c:forEach var="user11" items="${user11}">
                 <tr>
-                    <td><c:out value="${account7.accountUserID}"/></td>
-                    <td><c:out value="${account7.amount}"/></td>
-                    <td><c:out value="${account7.transactionDate}"/></td>
+                    <td><c:out value="${user11.userName}"/></td>
+                    <td><c:out value="${user11.firstName}"/></td>
+                    <td><c:out value="${user11.lastName}"/></td>
                     
                     </c:forEach>
                 </tr>
             </table>
     <h3><a href="login.html">Login / Register</a></h3>
 </main>
-<c:import url="/includes/footer.jsp"/>  
+<c:import url="footer_admin.jsp"/>  

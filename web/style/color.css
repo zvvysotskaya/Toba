@@ -20,15 +20,15 @@ nav a:hover{opacity:0.6;}
 nav ul{list-style-type:none; word-spacing: 5em; margin: 0; padding-top: 14px;}
 nav ul li{display: inline; word-spacing: 0.1em;}
 
-main{width:100%;min-width:960px;max-width:1280px;margin-bottom:0;margin-left:auto; margin-right:auto;padding-left: 1em; padding-right: 1em; display: block; 
+main{width:100%;min-width: 960px;max-width: 1280px; margin-bottom: 0;margin-left: auto; margin-right: auto; padding-left: 1em; padding-right: 1em; display: block; 
 padding-top:0; margin-top:0;line-height:2em;}
 #center{text-align: center;}
 img{border: none; padding: 0;}
 form.login1 input[type=text],form.login1 input[type=password]{width:40%;padding:10px 20px;margin:10px 10px;display:inline-block;border:1px solid #000000;}
 form.login1{text-align: center;}
 form.account1{text-align: center;}
-form.customer{text-align: center;}
-form.customer input[type=text],form.customer input[type=tel]{width:40%;padding:10px 20px;margin:10px 10px;display:inline-block;border:1px solid #000000;}
+form.customer{text-align: center; margin-left: auto; margin-right: auto;}
+form.customer input[type=text],form.customer input[type=tel]{width:40%;padding:10px 20px; margin: 10px 10px; display: inline-block;border:1px solid #000000;}
 form.addMoney input[type=text],form.customer{width:40%;padding:10px 20px;margin:10px 10px;display:inline-block;border:1px solid #000000;}
 form.removeMoney input[type=text],form.customer {width:40%;padding:10px 20px;margin:10px 10px;display:inline-block;border:1px solid #000000;}
 .copy{word-spacing:0.1px; color:#000000;font-size:0.75em;text-align:center;margin-top:6em;font-style: italic;border-top:2px solid #009900;width:40em;
